@@ -1,0 +1,27 @@
+.game-container {
+    display: flex;
+}
+
+#field {
+    margin: auto;
+    padding: 5px;
+    background-color: lightcoral;
+    border-radius: 7px;
+}
+
+.row {
+    margin-bottom: 3px;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    border: solid 1px darkslategrey;
+    display: inline-block;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.cell.active {
+    background-color: red;
+}
