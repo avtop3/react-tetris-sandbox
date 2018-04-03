@@ -10,7 +10,8 @@
 }
 
 .row {
-    margin-bottom: 3px;
+    margin: 0;
+    padding: 0;
 }
 
 .cell {
@@ -20,6 +21,10 @@
     display: inline-block;
     background-color: white;
     border-radius: 3px;
+    margin-right: 3px;
+}
+.cell:last-child{
+    margin-right: 0px;
 }
 
 .cell.active {
