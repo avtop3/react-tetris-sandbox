@@ -23,10 +23,28 @@
     border-radius: 3px;
     margin-right: 3px;
 }
-.cell:last-child{
+
+.cell:last-child {
     margin-right: 0px;
 }
 
 .cell.active {
     background-color: red;
+}
+
+.key-pad {
+    width: 150px;
+}
+
+.key-pad p {
+    margin: 5px;
+}
+
+.key-pad button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 33%;
+}
+.key-pad p:nth-last-child(1) button {
+    width: 100%;
 }

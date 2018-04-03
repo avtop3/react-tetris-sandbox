@@ -1,17 +1,17 @@
 Arguments: 
-  /usr/lib/nodejs/node-v8.9.4/bin/node /home/avtop/.yarn/bin/yarn.js start
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js start
 
 PATH: 
-  /home/avtop/.yarn/bin:/home/avtop/.config/yarn/global/node_modules/.bin:/usr/lib/nodejs/node-v8.9.4/bin:/home/avtop/bin:/home/avtop/.local/bin:/home/avtop/.yarn/bin:/home/avtop/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/snap/bin
+  C:\PROGRAM FILES (X86)\NVIDIA CORPORATION\PHYSX\COMMON;C:\WINDOWS\SYSTEM32\;C:\WEBSERVERS\USR\LOCAL\PHP5;C:\PROGRAM FILES\MICROSOFT SQL SERVER\110\TOOLS\BINN\;C:\PROGRAM FILES (X86)\BRACKETS\COMMAND;C:\PROGRAM FILES (X86)\SKYPE\PHONE\;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Lenovo\Bluetooth Software\syswow64;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\PROGRAM FILES (X86)\NVIDIA CORPORATION\PHYSX\COMMON;C:\PROGRAMDATA\ORACLE\JAVA\JAVAPATH;C:\WINDOWS\SYSTEM32\;C:\WEBSERVERS\USR\LOCAL\PHP5;C:\PROGRAM FILES\MICROSOFT\WEB PLATFORM INSTALLER\;C:\PROGRAM FILES\MICROSOFT SQL SERVER\110\TOOLS\BINN\;;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Lenovo\Bluetooth Software\syswow64;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Program Files (x86)\Brackets\command;C:\Program Files\Bandizip\7z;C:\Program Files\Mercurial;C:\Python27\;C:\Python27\Scripts\;C:\Users\Alex\AppData\Roaming\npm;C:\Users\Alex\AppData\Local\Yarn\bin
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  8.9.4
+  8.10.0
 
 Platform: 
-  linux x64
+  win32 x64
 
 npm manifest: 
   {
@@ -5953,14 +5953,14 @@ Lockfile:
 Trace: 
   Error: Command failed.
   Exit code: 1
-  Command: sh
-  Arguments: -c webpack-dev-server
-  Directory: /var/www/react-tetris-sandbox
+  Command: C:\Windows\system32\cmd.exe
+  Arguments: /d /s /c webpack-dev-server
+  Directory: D:\OpenServer Ultimate\domains\react-tetris-sandbox
   Output:
   
-      at ProcessTermError.MessageError (/home/avtop/.yarn/lib/cli.js:186:110)
-      at new ProcessTermError (/home/avtop/.yarn/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/home/avtop/.yarn/lib/cli.js:30281:17)
+      at ProcessTermError.MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)
+      at new ProcessTermError (C:\Program Files (x86)\Yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:30281:17)
       at emitTwo (events.js:126:13)
       at ChildProcess.emit (events.js:214:7)
       at maybeClose (internal/child_process.js:925:16)
