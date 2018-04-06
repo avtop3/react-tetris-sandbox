@@ -13,6 +13,7 @@ module.exports = {
         path: path.resolve('dist'),
         filename: 'index_bundle.js'
     },
+    devtool: "eval-source-map",
     module: {
         rules: [
             {
@@ -23,11 +24,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: "babel-loader"
-            }, {
-                test: /\.jsx?$/,
+                test: /\.js(x?)$/,
                 exclude: /node_modules/,
                 use: "babel-loader"
             }
