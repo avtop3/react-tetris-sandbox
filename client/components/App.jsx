@@ -25,6 +25,28 @@ export default class App extends React.Component {
                 [1, 1]
             ]
         ];
+    
+        this.shape_t = [
+            [
+                [0, 1, 0],
+                [1, 1, 1]
+            ]
+            ,
+            [
+                [1, 0],
+                [1, 1],
+                [1, 0]
+            ],
+            [
+                [1, 1, 1],
+                [0, 1, 0]
+            ],
+            [
+                [0, 1],
+                [1, 1],
+                [0, 1]
+            ]
+        ];
         this.shape_o = [
             [
                 [1, 1],
@@ -55,7 +77,7 @@ export default class App extends React.Component {
                 [1, 0],
             ],
         ];
-        this.shapes = [this.shape_o, this.shape_j, this.shape_z, this.shape_l];
+        this.shapes = [this.shape_o, this.shape_j, this.shape_z, this.shape_l, this.shape_t];
         this.shapeIndex = Math.floor(Math.random() * this.shapes.length);
         this.rotateIndex = 0;
         this.potentialRotateIndex = 0;
@@ -77,14 +99,15 @@ export default class App extends React.Component {
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
-            [1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1]
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         ];
 
         this.state = {
             matrix: this.getArrayToRender(),
             score: 0,
             gameOver: false,
+            pause: false
         };
         this.tick = this.tick.bind(this);
         this.actionMoveLeft = this.actionMoveLeft.bind(this);
@@ -92,6 +115,7 @@ export default class App extends React.Component {
         this.actionMoveDown = this.actionMoveDown.bind(this);
         this.actionDrop = this.actionDrop.bind(this);
         this.actionRotate = this.actionRotate.bind(this);
+        this._increase();
 
         document.onkeydown = this.onKeyDown.bind(this);
     }
@@ -122,6 +146,11 @@ export default class App extends React.Component {
         if (32 === e.keyCode) {
             // S or Down key
             this.actionDrop();
+        }
+    
+        if (80 === e.keyCode) {
+            // S or Down key
+            // this.actionPause();
         }
     }
 
@@ -161,6 +190,13 @@ export default class App extends React.Component {
             console.log("Moving");
         }
         this.setState({matrix: this.getArrayToRender()});
+    }
+    
+    _increase(){
+        this.actionMoveDown();
+        if(!this.state.pause){
+            setTimeout(this._increase.bind(this), 700);
+        }
     }
 
     getShape(potential = false) {
@@ -229,7 +265,14 @@ export default class App extends React.Component {
         }
         this.tick();
     }
-
+    
+    // actionPause() {
+    //     this._increase();
+    //     this.setState((state, props) => {
+    //         return {pause: !state.pause};
+    //     })
+    // }
+    
     getArrayToRender() {
         const shape = this.getShape();
         let _matrix = this.landed.map(function (arr) {
@@ -343,6 +386,7 @@ export default class App extends React.Component {
                             })}
                     </div>
                     <h3 id="score">Score: {this.state.score}</h3>
+                    <h2 className={'active'}>{this.state.pause?'Paused':null}</h2>
                     <div className="key-pad">
                         <p>
                             <button onClick={this.actionMoveLeft}>&lt;</button>
